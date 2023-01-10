@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="./app.js"></script>
+
+    <style>
+        img{
+            display: none;
+        }
+        canvas{
+            background-color: aqua;
+        }
+    </style>
+
+</head>
+<body>
+
+    <img id="gauge" src="game/yoo/img/gauge.png" >
+    <img id="bg" src="game/yoo/img/windwolf.png" >
+    <img id="btn" src="game/yoo/img/wind2nuky.png" >
+
+    <canvas class="game-canvas" width="1920" height="1080" tabindex="0" ></canvas>   <!-- 디스플레이논 삭제,탭인덱스 추가 -->
+    
+    <canvas class="story-canvas" width="1920" height="1080" style="display:none;"></canvas>
+</body>
+</html>
