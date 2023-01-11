@@ -1,7 +1,7 @@
-import WolfControl from '../game/yoo/item/wolfcontrol.js';
-import Background from '../game/yoo/item/background.js';
-import PowerBtn from '../game/yoo/item/powerbtn.js';
-import Timer from '../game/yoo/item/timer.js';
+import WolfControl from '../game/wind/item/wolfcontrol.js';
+import Background from '../game/wind/item/background.js';
+import PowerBtn from '../game/wind/item/powerbtn.js';
+import Timer from '../game/wind/item/timer.js';
 
 export default class GameCanvas{
     constructor(){
@@ -16,13 +16,13 @@ export default class GameCanvas{
         this.btn = new PowerBtn();
         this.timer = new Timer();
 
-        this.dom.onkeyup=this.keyUpHander.bind(this);
+        
         this.dom.onkeydown=this.keyDownHander.bind(this);
+        this.dom.onkeyup=this.keyUpHander.bind(this);
 
     }
 
     run(){
-        
         this.update();
         this.draw();
 
@@ -43,12 +43,11 @@ export default class GameCanvas{
         this.btn.draw(this.ctx);
         this.timer.draw(this.ctx);
     }
-    keyUpHander(e){
-     
-        this.btn.move(e.key);
-    }
     keyDownHander(e){
-        this.btn.move2(e.key);
+        this.btn.keyDown(e.key);
+    }
+    keyUpHander(e){
+        this.btn.keyUp(e.key);
     }
 
 
