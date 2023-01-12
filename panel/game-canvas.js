@@ -2,6 +2,8 @@ import WolfControl from '../game/wind/item/wolfcontrol.js';
 import Background from '../game/wind/item/background.js';
 import PowerBtn from '../game/wind/item/powerbtn.js';
 import Timer from '../game/wind/item/timer.js';
+import Red from '../game/wind/item/red.js';
+
 
 export default class GameCanvas{
     constructor(){
@@ -12,8 +14,9 @@ export default class GameCanvas{
         this.ctx = this.dom.getContext("2d");
 
         this.wolfControl = new WolfControl();
-        this.bg = new Background();
+        this.red = new Red();
         this.btn = new PowerBtn();
+        this.bg = new Background();
         this.timer = new Timer();
 
         
@@ -23,8 +26,8 @@ export default class GameCanvas{
     }
 
     run(){
-        this.update();
         this.draw();
+        this.update();
 
         window.setTimeout(()=>{
             this.run();
@@ -39,8 +42,9 @@ export default class GameCanvas{
     }
 
     draw(){
-        this.bg.draw(this.ctx);
+        this.red.draw(this.ctx);
         this.btn.draw(this.ctx);
+        this.bg.draw(this.ctx);
         this.timer.draw(this.ctx);
     }
     keyDownHander(e){

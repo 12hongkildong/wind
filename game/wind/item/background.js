@@ -1,11 +1,19 @@
 
 export default class Background{
     constructor(){
-        this.x=100;
-        this.y=500;
-        this.img=document.querySelector("#w-bg-wolf");
-        this.img2=document.querySelector("#w-bg-gauge");
-        this.imgBg=document.querySelector("#w-bg-map")
+        // 배경
+        this.grassX=0;
+        this.grassY=0;
+        this.imgGrass=document.querySelector("#w-bg-map")
+
+        // 늑대
+        this.wolfX=0;
+        this.wolfY=300;
+        this.imgWolf=document.querySelector("#w-bg-wolf");
+
+        // 파워 게이지
+        this.imgGaugeSpace=document.querySelector("#w-bg-gauge");
+
     }
 
     update(){
@@ -14,14 +22,16 @@ export default class Background{
     }
 
     draw(ctx){
-        ctx.drawImage(this.imgBg,
-            this.x,this.y, 3800,2100,
-            0,0,2000,1500);
+        // 배경
+        ctx.drawImage(this.imgGrass,
+            this.grassX,this.grassY, 3840,2160,
+            0,0,1400,700);
         
-        ctx.drawImage(this.img,this.x,this.y);
-        ctx.drawImage(this.img2, 
+        // 늑대    
+        ctx.drawImage(this.imgWolf,this.wolfX,this.wolfY);
+        ctx.drawImage(this.imgGaugeSpace, 
             0,0,750,150,
-            580,610,900,200);
+            480,420,752,145);
 
     }
 

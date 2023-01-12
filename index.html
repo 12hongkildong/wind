@@ -12,21 +12,25 @@
             display: none;
         }
         canvas{
-            background-color: aqua;
+            background-color: red;
         }
     </style>
 
 </head>
 <body>
-    <img id="w-bg-map" src="./img/w-map2.jpg">
-    <img id="w-bg-gauge" src="img/w-redgauge1-nuky.png">
+    <!-- 게임 맨 밑 배경 -->
+    <img id="bg-bg-red" src="./img/w-b-b-gaugeground.png">
+    <!-- 배경 -->
+    <img id="w-bg-map" src="./img/w-map2.png">
+    <img id="w-bg-gauge" src="img/w-redgauge-nuky.png">
     <img id="w-bg-wolf" src="img/w-windwolf.png">
+    <!-- 버튼 -->
     <img id="w-p-btn" src="img/w-wind2nuky.png">
     <img id="w-p-gauge" src="img/w-windga-nu.png">
     <img id="w-p-clear" src="img/w-clear.png">
     
 
-    <canvas class="game-canvas" width="1920" height="1080" tabindex="0" ></canvas>   <!-- 디스플레이논 삭제,탭인덱스 추가 -->
+    <canvas class="game-canvas" width="1400" height="700" tabindex="0" ></canvas>   <!-- 디스플레이논 삭제,탭인덱스 추가 -->
     
     <canvas class="story-canvas" width="1920" height="1080" style="display:none;"></canvas>
 </body>

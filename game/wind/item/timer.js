@@ -21,7 +21,6 @@ export default class Timer{
             alert("Game Win")
             return;
         }
-
     }
 
     draw(ctx){
