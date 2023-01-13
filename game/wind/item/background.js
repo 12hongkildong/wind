@@ -1,12 +1,12 @@
 
 export default class Background{
     constructor(){
-        // 배경
+        // 풀밭 그림
         this.grassX=0;
         this.grassY=0;
         this.imgGrass=document.querySelector("#w-bg-map")
 
-        // 늑대
+        // 늑대 그림
         this.wolfX=0;
         this.wolfY=300;
         this.imgWolf=document.querySelector("#w-bg-wolf");

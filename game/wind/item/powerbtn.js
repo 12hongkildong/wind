@@ -2,14 +2,10 @@ export default class PowerBtn{
     #speed;
     #btnSpeed;
     constructor(){
-
-
         // 파란색 게이지 움직이기
         this.gsx=-556;
         this.gsy=410;
         this.imgGauge=document.querySelector("#w-p-gauge")
-
-        
 
         // 바람 이미지
         this.wsx=600;
@@ -36,6 +32,11 @@ export default class PowerBtn{
         this.wsx-=this.#speed; 
         this.gsx-=this.#speed; 
 
+        if(this.wsx<325){ // 바람게이지가 0이 되면 점핑(?)한다.
+            this.wsx=400;
+            this.gsx=-755;
+        }
+
         // 바람 이미지가 사라진다(?)
         if(this.sx<200){
             this.sx=-1000;
@@ -45,15 +46,10 @@ export default class PowerBtn{
         if(this.wsx>1020){
             //return alert("겜클")//console.log("게임클리어!")
             this.clear=true;
-
-
         }
-
-        
     }
 
     draw(ctx){
-
         ctx.drawImage(this.imgGauge,
              0,0,750,150,
              this.gsx,this.gsy,1400,200)    
@@ -83,7 +79,7 @@ export default class PowerBtn{
             this.shouldHandleKeyDown = true;
     }
 
-    get Clear(){
+    getClear(){
         return this.clear;
     }
 }

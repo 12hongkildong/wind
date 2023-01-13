@@ -1,4 +1,5 @@
 import Background from './background.js';
+import PowerBtn from './powerbtn.js';
 
 export default class Timer{
     constructor(){
@@ -10,18 +11,20 @@ export default class Timer{
         
     }
     update(){
-        
-        this.realTimer--;
+        alert(PowerBtn.getClear)
+        if(!PowerBtn.clear){
+            this.realTimer--;
 
-        if(this.realTimer==this.counter){
-            this.gameTimer--;
-            this.counter-=46
-        }
+            if(this.realTimer==this.counter){
+                this.gameTimer--;
+                this.counter-=46
+            }
 
         // if(this.gameTimer==0){
         //     alert("Game Over")
         //     return;
         //}
+        }
     }
 
     draw(ctx){
