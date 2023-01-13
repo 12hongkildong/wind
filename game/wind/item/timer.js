@@ -10,6 +10,7 @@ export default class Timer{
         
     }
     update(){
+        
         this.realTimer--;
 
         if(this.realTimer==this.counter){
@@ -17,16 +18,19 @@ export default class Timer{
             this.counter-=46
         }
 
-        if(this.gameTimer==0){
-            alert("Game Win")
-            return;
-        }
+        // if(this.gameTimer==0){
+        //     alert("Game Over")
+        //     return;
+        //}
     }
 
     draw(ctx){
         ctx.font="100px sans-serif"
-        ctx.fillText(this.realTimer, 500, 100, 110) // 글자, x좌표, y좌표, 너비?-110이상 차이 없음
-        ctx.fillText(this.gameTimer, 500, 300, 110) // 글자, x좌표, y좌표, 너비?-110이상 차이 없음
+        //ctx.fillText(this.realTimer, 500, 100, 110) // 글자, x좌표, y좌표, 너비?-110이상 차이 없음
+        ctx.fillStyle = "#f008"
+        ctx.fillRect(10,10,200,110)
+        ctx.fillStyle = "#000"
+        ctx.fillText(this.gameTimer, 50, 100, 110) // 글자, x좌표, y좌표, 너비?-110이상 차이 없음
 
     }
 

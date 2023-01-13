@@ -2,11 +2,10 @@ export default class PowerBtn{
     #speed;
     #btnSpeed;
     constructor(){
-        // 게임클리어시 태풍이미지
-        this.imgClear=document.querySelector("#w-p-clear")
+
 
         // 파란색 게이지 움직이기
-        this.gsx=60;
+        this.gsx=-556;
         this.gsy=410;
         this.imgGauge=document.querySelector("#w-p-gauge")
 
@@ -27,6 +26,9 @@ export default class PowerBtn{
         // 키보드 한 번만 누르게 하기
         this.shouldHandleKeyDown = true;
         this.n=0;
+
+        // 클리어확인용
+        this.clear = false;
     }
 
     update(){
@@ -39,10 +41,12 @@ export default class PowerBtn{
             this.sx=-1000;
         }    
 
-        // 바람 이미지가 올라간다.
+        // 입김이 창에 끝에 닿으면 태풍 이미지가 바탕을 채운다.
         if(this.wsx>1020){
-            
-            return alert("겜클")//console.log("게임클리어!")
+            //return alert("겜클")//console.log("게임클리어!")
+            this.clear=true;
+
+
         }
 
         
@@ -52,7 +56,7 @@ export default class PowerBtn{
 
         ctx.drawImage(this.imgGauge,
              0,0,750,150,
-             this.gsx,this.gsy,750,200)    
+             this.gsx,this.gsy,1400,200)    
         ctx.drawImage(this.imgWind, 
             0,0,this.sw,this.sh,
             this.wsx,this.wsy,300,300);
@@ -77,5 +81,9 @@ export default class PowerBtn{
     keyUp(k){
         if(k==" ")
             this.shouldHandleKeyDown = true;
+    }
+
+    get Clear(){
+        return this.clear;
     }
 }
