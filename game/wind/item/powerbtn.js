@@ -2,6 +2,9 @@ export default class PowerBtn{
     #speed;
     #btnSpeed;
     constructor(){
+        // 바람소리
+        this.sound=document.querySelector("#windsound")
+
         // 파란색 게이지 움직이기
         this.gsx=-556;
         this.gsy=410;
@@ -14,8 +17,9 @@ export default class PowerBtn{
         this.sw=188;
         this.sh=188;
 
-        this.#speed=1;
-        this.#btnSpeed=50;
+        // 난도조절
+        this.#speed=1; // 게이지 줄어드는 속도
+        this.#btnSpeed=50; // 스페이스바에 따른 바람의 이동거리
 
         this.imgWind=document.querySelector("#w-p-btn")
 
@@ -46,6 +50,8 @@ export default class PowerBtn{
         if(this.wsx>1020){
             //return alert("겜클")//console.log("게임클리어!")
             this.clear=true;
+            this.#speed=0; // 칸이 넘어가면 바람 게이지가 멈춘다.
+            this.sound.play();
         }
     }
 

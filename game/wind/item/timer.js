@@ -1,5 +1,5 @@
 import Background from './background.js';
-import PowerBtn from './powerbtn.js';
+import globalbtn from '../../../globalbtn.js';
 
 export default class Timer{
     constructor(){
@@ -11,8 +11,8 @@ export default class Timer{
         
     }
     update(){
-        alert(PowerBtn.getClear)
-        if(!PowerBtn.clear){
+        
+        if(!globalbtn.btn.clear){  // 전역변수를 보고 버튼의 clear가 트루가 되면 멈춘다.
             this.realTimer--;
 
             if(this.realTimer==this.counter){
